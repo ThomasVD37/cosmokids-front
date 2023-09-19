@@ -1,0 +1,178 @@
+@use '../../../styles/vars';
+
+.activity__content {
+
+    height: 100%;
+    padding: 4rem 2rem;
+
+    &__header {
+        width: 40%;
+        height: vars.$activity-header;
+        min-height: fit-content;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: vars.$tertiaryBlue;
+
+        h4 {
+            color: vars.$secondaryBlue;
+            font-weight: 700;
+        }
+
+        .duration {
+            position: absolute;
+            bottom: -1rem;
+            right: -1rem;
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background-color: vars.$secondaryBlue;
+        }
+
+        p {
+            margin-left: 0.5rem;
+        }
+
+        i {
+            font-size: 20px;
+        }
+    }
+
+    &__display {
+        height: calc(100% - vars.$activity-header);
+        max-height: 100%;
+        display: flex;
+        justify-content: space-between;
+        background-color: vars.$primary;
+    }
+
+
+
+    .playground {
+        padding: 4rem 2rem 0;
+        width: 70%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            // img {
+            //     max-width: 100%;
+            //     max-height: 100%;
+            //     object-fit: contain;
+            // }
+
+            button.exit {
+                position: absolute;
+                border: none;
+                display: flex;
+                align-items: center;
+                border-radius: 0 0 5px 5px;
+                color: vars.$primary;
+                z-index: 10;
+
+                i {
+                    margin-left: 0.5rem;
+                }
+            }
+        }
+
+        &__starter {
+            display: none;
+        }
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+
+    .activity__content {
+
+        padding: 4rem 2rem;
+
+        &__header {
+            width: 60%;
+        }
+
+        &__display {
+            height: 100%;
+            flex-direction: column;
+        }
+
+        .playground {
+            padding: 0;
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .activity__content {
+
+        &__header {
+            width: 80%;
+        }
+
+        .playground__container {
+            display: none;
+        }
+
+        .active {
+            display: flex;
+            justify-content: center;
+        }
+
+        .playground__starter {
+            background-color: white;
+            flex-direction: column;
+            font-size: 18px;
+            border-radius: 5px;
+            padding: 10rem 5rem;
+            text-align: center;
+            color: vars.$primary;
+            font-weight: 700;
+            line-height: 2rem;
+
+            button {
+                width: 24rem;
+                font-size: 24px;
+                font-family: vars.$title-familly;
+                margin: 2rem auto 0;
+                border: 5px solid vars.$tertiaryOrange;
+                border-radius: 5px;
+                background-color: black;
+                padding: 1rem;
+                color: vars.$tertiaryOrange;
+            }
+
+            i {
+                margin-right: 1rem;
+            }
+        }
+    }
+
+    .activity__content.no_border {
+        padding: 0;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+
+    .activity__content {
+
+        &__header {
+            width: 100%;
+        }
+    }
+}

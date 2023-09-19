@@ -1,0 +1,26 @@
+@use '.././../../styles/vars';
+
+
+.currentQuestion {
+    color: vars.$secondaryYellow;
+    margin: 20px 0;
+    width: 50em;
+    text-align: center;
+    font-size: 32px;
+    h3{
+        font-size: 2.5rem;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .currentQuestion {
+        font-size: 3rem;
+        text-align: center;
+        
+    }
+}
+@media screen and (max-width: 768px) {
+    .currentQuestion {
+        width: 35em;
+        
+    }
+}

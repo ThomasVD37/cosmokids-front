@@ -1,0 +1,70 @@
+@use '../../styles/vars';
+
+
+.containerLogin {
+    height: calc(100vh - vars.$header-height);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    // margin: auto;
+    background-color: vars.$primary;
+    
+    // margin: 5em;
+    // .containerError{
+    //     position: absolute;
+    //     top: 10em;
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    //     color: rgb(250, 82, 82);
+    //     width: 20em;
+    //     height: 5em;
+    //     border-radius: 10px;
+    //     background-color: rgba(0, 0, 0, 0.071);
+    //     margin-bottom: 3%;
+    // }
+    .ContainerForm{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 30em;
+        height: 30em;
+        padding: 1rem;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border-radius: 10px;
+        h3{
+            color: vars.$secondaryYellow;
+            margin-bottom: 1em;
+            font-size: 3rem;
+        }
+        .containerRedirect {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 40px;
+            color: vars.$secondaryYellow;
+            font-weight: 700;
+            span{
+                display: flex;
+                justify-content: center;
+            }
+            .linkRegister {
+                display: flex;
+                justify-content: center;
+                text-decoration: underline;
+                color: rgb(245, 245, 245);
+                margin-left: 5px;
+                margin-top: 5px;
+    
+                &:hover {
+                    color: rgba(255, 255, 255, 0.852);
+                }
+            }
+        }
+    }
+}

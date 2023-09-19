@@ -1,0 +1,267 @@
+@use '../../styles/vars';
+
+.header-container {
+
+    // Shared CSS
+
+    /* reset */
+    button,
+    h3,
+    h1,
+    h4 {
+        all: unset;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    height: vars.$header-height;
+    background-color: vars.$secondaryBlue;
+
+    // Desktop CSS
+    .desktop-header {
+        display: none;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+
+        @media screen and (min-width: 768px) {
+            display: flex;
+        }
+
+        .main-icon {
+            width: auto;
+            height: 50px;
+        }
+
+        .search-bar {
+            width: 50%;
+        }
+
+        .NavigationMenuRoot {
+            color: white;
+            height: 100%;
+            margin-right: 10px;
+
+            > :first-child {
+                height: 100%;
+            }
+        }
+
+        .NavigationMenuList {
+            height: 100%;
+            display: flex;
+        }
+
+        .NavigationMenuItem {
+            height: 100%;
+        }
+
+        .NavigationMenuTrigger {
+            height: 100%;
+            padding: 0px 10px 0px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 10px;
+
+            // > * {
+            //     text-shadow: black 5px 5px 1px;
+            // }
+        }
+
+        .NavigationMenuChevron {
+            transition: transform 250ms ease;
+        }
+
+        .NavigationMenuTrigger[data-state='open']>.NavigationMenuChevron {
+            transform: rotate(180deg);
+        }
+
+        .NavigationMenuContent {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+
+            &.activity-submenu {
+                display: flex;
+                flex-direction: row;
+
+                .type-name {
+                    color: vars.$secondaryBlue;
+                    background-color: rgb(245, 245, 245);
+                    padding: 5px;
+                    border-radius: 3px;
+                }
+
+
+                >* {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    border-radius: 6px;
+                    padding: 5px;
+                }
+            }
+
+        }
+
+        .NavigationMenuIndicator {
+            z-index: 2;
+            background-color: vars.$secondaryYellow;
+            height: 3px;
+            transition: transform, 250ms ease;
+        }
+
+        .NavigationMenuViewport {
+            color: black;
+            padding: 10px;
+            position: absolute;
+            right: 10px;
+            margin-left: 10px;
+            margin-top: 10px;
+            width: fit-content;
+            background-color: white;
+            border-radius: 6px;
+            z-index: 2;
+            box-shadow: vars.$tertiaryBlue 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+        }
+
+        .list-item {
+            padding: 5px;
+            margin: 1px 0px 1px 0px;
+            border-radius: 3px;
+
+            &:hover {
+                background-color: vars.$tertiaryBlue;
+            }
+        }
+
+        .SeparatorRoot {
+            background-color: rgb(209, 209, 209);
+            align-self: center;
+            height: 1px;
+            width: 100%;
+        }
+    }
+
+    // Mobile CSS
+    .mobile-header {
+
+        @media screen and (min-width: 768px) {
+            display: none;
+        }
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+
+        .main-icon {
+            width: auto;
+            height: 50px;
+        }
+
+        .AccordionItem {
+            height: 100%;
+        }
+
+        .AccordionTrigger {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            height: 50px;
+            width: 50px;
+
+            // svg {
+            //     width: 20px;
+            //     height: 20px;
+            // }
+        }
+
+        .sub-menu-trigger {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 50px;
+            width: 100%;
+        }
+
+        .sub-menu-trigger[data-state='open']>.AccordionChevron {
+            transform: rotate(180deg);
+            transition: transform 250ms ease;
+        }
+
+        .AccordionContent {
+            width: 100%;
+            position: absolute;
+            z-index: 2;
+            background-color: white;
+            color: black;
+        }
+
+        .AccordionHeader {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            max-width: 100%;
+        }
+
+        .AccordionRoot {
+            height: 100%;
+            width: 100%;
+        }
+
+        .title-icon-box {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 35px;
+
+            .sub-menu-icon {
+                // width: auto;
+            }
+
+            i {
+                padding-left: 20px;
+            }
+
+            span {
+                padding-left: 24px;
+            }
+        }
+
+        .AccordionChevron {
+            margin-right: 30px;
+            transition: transform 300ms cubic-bezier(0.87, 0, 0.13, 1);
+        }
+
+        .sub-menu-list {
+            max-height: 200px;
+            overflow-y: scroll;
+
+            ul {
+                display: flex;
+                flex-direction: column;
+
+                a {
+                    padding: 10px 0px 10px 66px;
+                }
+            }
+        }
+
+        .user-btns {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .search-bar {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

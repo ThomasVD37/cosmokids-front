@@ -1,0 +1,58 @@
+.containerPassword {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 4px;
+    font-size: 15px;
+    color: black;
+    background-color: whitesmoke;
+    box-shadow: 0 0 0 1px black;
+
+    .inputElement {
+        display: flex;
+        justify-content: left;
+        width: 87%;
+        border: 0;
+        padding: 0 10px;
+        height: 35px;
+        padding-right: 0;
+        line-height: 1;
+        
+    }
+
+    .show {
+        padding: 5px;
+        width: 1.5em;
+
+        &:hover {
+            padding: 5px;
+            position: absolute;
+            overflow: hidden;
+            right: 12px;
+            width: 1.4em;
+            cursor: pointer;
+        }
+    }
+}
+
+.container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 4px;
+    font-size: 15px;
+    color: black;
+    background-color: whitesmoke;
+    box-shadow: 0 0 0 1px black;
+
+    .inputElement {
+        display: flex;
+        justify-content: left;
+        width: 100%;
+        border: 0;
+        padding: 0 10px;
+        height: 35px;
+        line-height: 1;
+    }
+
+}

@@ -1,0 +1,27 @@
+@use '../../styles/vars';
+
+
+.Button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(0, 0, 0, 0.521);
+    border-radius: 5px;
+    padding: 0 20px;
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 16px;
+    height: 35px;
+    width: 100%;
+    margin-top: 10;
+    background-color: rgb(255, 196, 0);
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+
+}
+
+.Button:hover {
+    cursor: pointer;
+    background-color: vars.$secondaryYellow;
+}
+

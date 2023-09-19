@@ -1,0 +1,144 @@
+@use '../../../styles/vars';
+
+.left_panel {
+    height: 100%;
+    width: 15%;
+    background-color: vars.$secondaryBlue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+
+    &__description,
+    &__rules {
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .title {
+        display: flex;
+        color: vars.$secondaryYellow;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        i {
+            margin-right: 1rem;
+        }
+    }
+
+    &__description {
+        padding-top: 1rem;
+    }
+}
+
+.ScrollAreaRoot {
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px vars.$primary;
+    background-color: white;
+    --scrollbar-size: 1rem;
+}
+
+.ScrollAreaViewport {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    padding: 1rem;
+}
+
+.ScrollAreaScrollbar {
+    display: flex;
+    /* ensures no selection */
+    user-select: none;
+    /* disable browser handling of all panning and zooming gestures on touch devices */
+    touch-action: none;
+    padding: 2px;
+    background: vars.$tertiaryBlue;
+    transition: background 160ms ease-out;
+}
+
+.ScrollAreaScrollbar[data-orientation='vertical'] {
+    width: var(--scrollbar-size);
+}
+
+.ScrollAreaScrollbar[data-orientation='horizontal'] {
+    flex-direction: column;
+    height: var(--scrollbar-size);
+}
+
+.ScrollAreaThumb {
+    flex: 1;
+    background: vars.$primary;
+    border-radius: var(--scrollbar-size);
+    position: relative;
+}
+
+/* increase target size for touch devices https://www.w3.org/WAI/WCAG21/Understanding/target-size.html */
+.ScrollAreaThumb::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    min-width: 44px;
+    min-height: 44px;
+}
+
+@media screen and (max-width: 1200px) {
+
+    .left_panel {
+        width: 20%;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+
+    .left_panel {
+
+        width: 100%;
+        height: 100%;
+        flex-direction: row;
+        margin-top: 3rem;
+
+        &__description,
+        &__rules {
+            width: 48%;
+            padding: 0;
+            // min-height: max-content;
+            //margin-bottom: 1rem;
+        }
+
+        .ScrollAreaScrollbar {
+            display: none;
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .left_panel {
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        margin-bottom: 4rem;
+
+        &__description,
+        &__rules {
+            width: 100%;
+        }
+
+        &__rules {
+            margin-bottom: 1rem;
+        }
+    }
+
+}

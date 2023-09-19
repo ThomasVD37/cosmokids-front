@@ -1,0 +1,145 @@
+@use '../../../styles/vars';
+
+
+.rightPopoverContent {
+    border-radius: 4px;
+    padding: 1rem;
+    height: calc(100vh - 10rem);
+    width: calc(100vw - 2rem);
+    background-color: vars.$tertiaryBlue;
+    box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+    animation-duration: 800ms;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+    // display: flex;
+    // justify-content: flex-end;
+    // align-items: center;
+
+    .right_panel__help {
+        transform: rotate(90deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        //overflow: scroll;
+
+        h3 {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: vars.$primary;
+            font-family: vars.$title-familly;
+        }
+
+        .associated_lessons {
+            display: flex;
+            justify-content: center;
+
+            &__block {
+                width: calc((100vh / 2) - 10rem);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                img {
+                    width: 70%;
+                }
+            }
+        }
+
+        .rightScrollAreaRoot {
+            height: calc(100vw - 12rem);
+            width: calc(100vh - 24rem);
+            border-radius: 4px;
+            --scrollbar-size: 1rem;
+        }
+
+        .mobileScrollAreaViewport {
+            width: 100%;
+            height: 100%;
+            overflow: scroll visible !important;
+            display: flex;
+            align-items: center;
+            border-radius: inherit;
+            padding: 1rem;
+            background-color: vars.$primary;
+        }
+
+        
+        .ScrollAreaScrollbar {
+            display: flex;
+            /* ensures no selection */
+            user-select: none;
+            /* disable browser handling of all panning and zooming gestures on touch devices */
+            touch-action: none;
+            padding: 2px;
+            background: vars.$tertiaryBlue;
+            transition: background 160ms ease-out;
+        }
+
+        .ScrollAreaScrollbar[data-orientation='vertical'] {
+            width: var(--scrollbar-size);
+        }
+
+        .ScrollAreaScrollbar[data-orientation='horizontal'] {
+            flex-direction: column;
+            height: var(--scrollbar-size);
+        }
+
+        .ScrollAreaThumb {
+            flex: 1;
+            background: vars.$primary;
+            border-radius: var(--scrollbar-size);
+            position: relative;
+        }
+
+        /* increase target size for touch devices https://www.w3.org/WAI/WCAG21/Understanding/target-size.html */
+        .ScrollAreaThumb::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            min-width: 44px;
+            min-height: 44px;
+        }
+
+    }
+}
+
+
+//**************************
+// Popover
+.right_menu_button {
+    position: absolute;
+    top: 0;
+    left: calc(100vh - 4rem);
+    color: vars.$primary;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 0 0 5px 0;
+    font-size: 24px;
+    margin: auto;
+    z-index: 2;
+}
+
+.rightPopoverClose {
+    height: 25px;
+    width: 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: vars.$primary;
+    background-color: white;
+    border-radius: 5px;
+    position: absolute;
+    border: none;
+    top: 10px;
+    right: 10px;
+}

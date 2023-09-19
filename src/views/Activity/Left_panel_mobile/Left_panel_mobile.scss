@@ -1,0 +1,206 @@
+@use '../../../styles/vars';
+
+.LeftPopoverContent {
+    border-radius: 4px;
+    padding: 1rem;
+    height: calc(100vh - 10rem);
+    width: calc(100vw - 2rem);
+    background-color: vars.$tertiaryBlue;
+    box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+    animation-duration: 800ms;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .left_panel__description {
+        transform: rotate(90deg);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        //overflow: hidden;
+
+        h4 {
+            font-size: 24px;
+            text-align: center;
+            width: calc(100vh - 20rem);
+            margin: 2rem 0;
+            color: vars.$primary;
+            font-family: vars.$title-familly;
+        }
+    }
+
+    .LeftAccordionRoot {
+        border-radius: 6px;
+        height: calc(100vw - 8rem);
+        width: calc(100vh - 20rem);
+        overflow: hidden;
+    }
+
+    .AccordionItem {
+        overflow: hidden;
+        margin-top: 1px;
+    }
+
+    .AccordionHeader {
+        display: flex;
+        background-color: vars.$primary;
+
+    }
+
+    .AccordionTrigger {
+        font-family: inherit;
+        padding: 0 20px;
+        border: none;
+        height: 45px;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        line-height: 1;
+        color: vars.$secondaryYellow;
+        background-color: vars.$primary;
+
+        i {
+            margin-right: 1rem;
+        }
+    }
+
+    .AccordionTrigger:hover {
+        background-color: var(--mauve-2);
+    }
+
+    .AccordionContent {
+        overflow: hidden;
+        padding: 1rem;
+        color: var(--mauve-11);
+        background-color: white;
+    }
+
+    .AccordionContent[data-state='open'] {
+        animation: slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1);
+    }
+
+    .AccordionContent[data-state='closed'] {
+        animation: slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1);
+    }
+
+    @keyframes slideDown {
+        from {
+            height: 0;
+        }
+
+        to {
+            height: var(--radix-accordion-content-height);
+        }
+    }
+
+    @keyframes slideUp {
+        from {
+            height: var(--radix-accordion-content-height);
+        }
+
+        to {
+            height: 0;
+        }
+    }
+
+}
+
+//**************************
+// Popover
+.left_menu_button {
+    position: absolute;
+    color: vars.$primary;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 0 0 5px 0;
+    font-size: 24px;
+    margin: auto;
+    z-index: 2;
+}
+
+
+.PopoverContent[data-state='open'][data-side='top'] {
+    animation-name: slideDownAndFade;
+}
+
+.PopoverContent[data-state='open'][data-side='right'] {
+    animation-name: slideLeftAndFade;
+}
+
+.PopoverContent[data-state='open'][data-side='bottom'] {
+    animation-name: slideUpAndFade;
+}
+
+.PopoverContent[data-state='open'][data-side='left'] {
+    animation-name: slideRightAndFade;
+}
+
+.PopoverClose {
+    height: 25px;
+    width: 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: vars.$primary;
+    background-color: white;
+    border-radius: 5px;
+    position: absolute;
+    border: none;
+    bottom: 10px;
+    right: 10px;
+}
+
+@keyframes slideUpAndFade {
+    from {
+        opacity: 0;
+        transform: translateY(2px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideRightAndFade {
+    from {
+        opacity: 0;
+        transform: translateX(-2px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideDownAndFade {
+    from {
+        opacity: 0;
+        transform: translateY(-2px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideLeftAndFade {
+    from {
+        opacity: 0;
+        transform: translateX(2px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

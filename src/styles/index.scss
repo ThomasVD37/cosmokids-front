@@ -1,0 +1,54 @@
+@use 'reset';
+@use 'vars';
+
+html {
+    font-size: 0.625rem;
+    /* 10px / 16px = 0.625; */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: vars.$primary;
+    min-height: 100vh;
+    font-size: 1.6rem;
+    /* on remet une taille de police par défaut à 16px */
+}
+
+#root {
+    height: 100%;
+    min-height: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1, h2, h3 {
+    font-family: 'Space kids', sans-serif;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+/* Reset perso */
+
+input,
+select,
+button {
+    font: inherit;
+}
+
+li {
+    list-style-type: none;
+}
+
+/* suppression du padding gauche par defaut de l'ul */
+ul {
+    padding: 0;
+    margin: 0;
+}

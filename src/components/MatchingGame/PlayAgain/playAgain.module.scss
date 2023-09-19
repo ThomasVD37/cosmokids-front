@@ -1,0 +1,22 @@
+@use '../../../styles/vars';
+
+.resetGameButton{
+    font-family: 'Space kids', sans-serif;
+    width:fit-content;
+    padding: 1rem;
+    padding-right: 2rem; 
+    padding-left: 2rem;
+    border-radius:15px;
+    font-size: 2rem ;
+    background-color: vars.$secondaryBlue;
+    color: vars.$primary;
+    border: 2px solid vars.$secondaryYellow;
+    transition: ease 0.4s;
+
+    
+}
+.resetGameButton:hover{
+    background-color: vars.$primary;
+    color: vars.$secondaryYellow;
+    transform: scale(1.1);
+}

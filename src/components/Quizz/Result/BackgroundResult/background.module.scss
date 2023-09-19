@@ -1,0 +1,264 @@
+$mars: #C25447;
+
+$mercury: #76777A;
+
+$pluto: #805F47;
+$pluto-2: darken(#854339, 5);
+
+$earth-sea: #496282;
+$earth-green: #5E8249;
+
+$uranus: #9DB1BF;
+
+$neptune: #5870A8;
+
+$venus: #D1734B;
+$venus-extra: #E6AF97;
+
+@mixin gradient($type, $info) {
+    background: #{$type}-gradient($info);
+    background: -webkit-#{$type}-gradient($info);
+    background: -moz-#{$type}-gradient($info);
+    background: -ms-#{$type}-gradient($info);
+}
+@mixin browsers($info) {
+    animation: $info;
+    -webkit-animation: $info;
+    -moz-animation: $info;
+    -ms-animation: $info;
+    -o-animation: $info;
+}
+
+@mixin animation($name) {
+    @keyframes #{$name} {
+        @content;
+    }
+
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+}
+.starsWrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    .stars {
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        display: inline-block;
+        position: absolute;
+    }
+}
+.planetsWrapper {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+
+    .earth {
+        background-color: $earth-sea;
+        border-radius: 100%;
+        box-shadow: inset -3px -3px darken($earth-sea, 5);
+        height: 100px;
+        left: 5%;
+        top: 6%;
+        z-index: 2;
+        width: 100px;
+        position: absolute;
+
+        &:before {
+            background-color: $earth-green;
+            border-radius: 100% 70% 100% 70%;
+            content: '';
+            height: 60px;
+            left: 10px;
+            position: absolute;
+            top: 40px;
+            width: 32px;
+            transform: rotate(-42deg);
+        }
+
+        &:after {
+            background-color: $earth-green;
+            border-radius: 100% 70% 100% 70%;
+            content: '';
+            height: 30px;
+            left: 50px;
+            position: absolute;
+            top: 3px;
+            width: 25px;
+            transform: rotate(-35deg);
+        }
+    }
+
+    .mars {
+        @extend .earth;
+        background-color: $mars;
+        position: absolute;
+        box-shadow: inset -3px -3px darken($mars, 5);
+        height: 70px;
+        left: 15%;
+        top: 80%;
+        width: 70px;
+
+        &:before {
+            background-color: darken($mars, 10);
+            border-radius: 100%;
+            height: 20px;
+            left: 35px;
+            top: 40px;
+            width: 22px;
+        }
+
+        &:after {
+            background-color: darken($mars, 10);
+            border-radius: 100%;
+            height: 14px;
+            left: 14px;
+            top: 15px;
+            width: 14px;
+        }
+    }
+
+    .mercury {
+        background-color: $mercury;
+        border-radius: 100%;
+        box-shadow: inset -3px -3px darken($mercury, 5);
+        height: 40px;
+        left: 20%;
+        position: absolute;
+        top: 5%;
+        width: 40px;
+
+        &:before {
+            background-color: darken($mercury, 5);
+            border-radius: 100%;
+            content: '';
+            height: 7px;
+            left: 6px;
+            position: absolute;
+            top: 23px;
+            width: 7px;
+        }
+
+        &:after {
+            background-color: darken($mercury, 5);
+            border-radius: 100%;
+            content: '';
+            height: 5px;
+            left: 20px;
+            position: absolute;
+            top: 6px;
+            width: 5px;
+        }
+    }
+
+    .pluto {
+        @extend .mercury;
+        background-color: $pluto;
+        box-shadow: inset -3px -3px darken($pluto, 5);
+        height: 50px;
+        left: 90%;
+        top: 75%;
+        width: 50px;
+
+        &:before {
+            background-color: $pluto-2;
+            height: 10px;
+            left: -1px;
+            opacity: 0.8;
+            top: 25px;
+            width: 21px;
+            transform: rotate(65deg);
+        }
+
+        &:after {
+            background-color: $pluto-2;
+            opacity: 0.8;
+        }
+    }
+
+    .venus {
+        border-radius: 100%;
+        height: 80px;
+        left: 70%;
+        position: absolute;
+        top: 40%;
+        width: 80px;
+        @include gradient(linear, (lighten($venus, 10) 10px, darken($venus, 10) 15px, $venus 25px, lighten($venus, 15) 40px, darken($venus, 10) 45px,  $venus 25px, lighten($venus, 15) 80px, $venus 25px, darken($venus, 20) 5px));
+        transform: rotate(30deg);
+    }
+
+    .uranus {
+        border-radius: 100%;
+        position: absolute;
+        background-color: $uranus;
+        box-shadow: inset -8px -8px darken($uranus, 15);
+        height: 200px;
+        left: 90%;
+        top: -15%;
+        width: 200px;
+
+        &:after,
+        &:before {
+            border: 0;
+        }
+
+        .neptune {
+            @extend .uranus;
+            background-color: $neptune;
+            box-shadow: inset -3px -3px darken($neptune, 15);
+            height: 60px;
+            left: 880px;
+            top: 38px;
+            width: 60px;
+        }
+    }
+    @for $i from 1 through 200 {
+        .s#{$i} {
+            $speed: random(15) + 10 + s;
+            $delay: - (random(25)) + s;
+            $size: random(1) + 0.5px;
+            height: $size;
+            left: random(100) + 0%;
+            top: random(100) + 0%;
+            width: $size;
+            @include browsers(shiningStar $speed $delay infinite);
+        }
+    }
+
+    /* animations */
+    @include animation(shiningStar) {
+        0% {
+            opacity: 1;
+        }
+
+        20% {
+            opacity: 0.5;
+        }
+
+        40% {
+            opacity: 0;
+        }
+
+        60% {
+            opacity: 0.5;
+        }
+
+        80% {
+            opacity: 0.75;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+}

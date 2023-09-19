@@ -1,0 +1,50 @@
+@use '../../../styles/vars';
+
+.droppableZone{
+       width: 12%;
+       aspect-ratio: 1/1;
+       margin-left: 2.5%;
+       margin-right: 2.5%;
+       transition: border 0.1s ease;
+       font-weight: 500;
+       font-family: 'Space kids', sans-serif;
+       font-size: 2em;
+       border-radius: 15px;
+       span{
+              text-align: center;
+       }
+
+}
+
+@media screen and (max-width: 1897px) {
+       .droppableZone{
+              width: 15%;
+              font-size:1.5em
+       }
+}
+
+@media screen and (max-width: 1191px) {
+       .droppableZone{
+              width: 17%;
+              font-size:1.2em
+       }
+}
+
+@media screen and (max-width: 1024px) {
+       .droppableZone{
+              width: 15%;
+              font-size:1.5em
+       }
+}
+@media screen and (max-width: 392px) {
+       .droppableZone{
+              font-size:1em
+       }
+}
+
+
+@media screen and (max-width: 768px) {
+       .droppableZone{
+              font-size:1em
+       }
+}

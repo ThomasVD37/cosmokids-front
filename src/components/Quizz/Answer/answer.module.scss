@@ -1,0 +1,10 @@
+@use '../../../styles/vars';
+
+.containerAnswer{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin: 5px;
+        width: 400px;
+}

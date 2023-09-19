@@ -1,0 +1,39 @@
+.draggableItem {
+    width: 10%;
+    
+    margin-left: 3.5%;
+    margin-right: 3.5%;
+    padding: 1%;
+    touch-action: none;
+    transform: unset;
+    cursor: grabbing;
+  transition: opacity 0.5s;
+}
+
+@media screen and (max-width: 1897px) {
+       .draggableItem{
+              width: 12%;
+              margin-left: 4%;
+              margin-right: 4%;
+              
+       }
+}
+
+@media screen and (max-width: 1191px) {
+       .draggableItem{
+              width: 14%;
+
+              
+       }
+}
+
+@media screen and (max-width: 768px) {
+       .draggableItem{
+              width: 14%;
+              margin-left: 3%;
+              margin-right: 3%;
+
+              
+       }
+}
+

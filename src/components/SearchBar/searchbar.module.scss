@@ -1,0 +1,53 @@
+@use '../../styles/vars';
+
+
+.container {
+  position: relative;
+  font-size: 16px;
+  font-family: sans-serif;
+  width: 80%;
+}
+
+.input {
+  border: 1px solid #ddd;
+  background-color: #fff;
+  width: 100%;
+  font-size: 16px;
+  padding: 10px;
+  outline: none;
+}
+
+.typeahead {
+  color: #a3b4a9;
+}
+
+.listbox {
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  padding: 5px 10px;
+  background-color: #fff;
+  width: 100%;
+  z-index: 1;
+}
+
+.groupHeading {
+  border-bottom: 1px solid #ddd;
+  margin: 5px 0;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  color: vars.$secondaryBlue;
+  // color: #005a1c;
+}
+
+.item {
+  cursor: pointer;
+  padding: 5px;
+}
+
+.highlightedItem {
+  cursor: pointer;
+  background-color: #deebe2;
+  padding: 5px;
+}

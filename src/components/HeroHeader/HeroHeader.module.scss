@@ -1,0 +1,245 @@
+@use "./../../styles/vars";
+
+
+.headerContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 7rem;
+    padding-top: 2rem;
+    padding-bottom: 0;
+
+
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .imageContainer {
+            padding: 1rem;
+            width: 70%;
+            margin: 0 auto;
+            border-radius: 20px;
+            display: flex;
+            align-content: center;
+
+            img {
+                width: 40rem;
+                margin: 0 auto;
+            }
+        }
+
+        .presentationText {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            color: vars.$primary;
+            background-color: vars.$tertiaryBlue;
+            border: 5px solid vars.$secondaryYellow;
+            width: 50%;
+            border-radius: 30px;
+            padding: 2rem;
+            padding-top: 2.5rem;
+            font-size: 2rem;
+
+            .buttonContainer {
+                position: absolute;
+                top: -20px;
+                width: 25em;
+                display: flex;
+                justify-content: space-around;
+                font-family: vars.$title-familly;
+                font-size: 2rem;
+
+                a {
+
+                    width: 10em;
+                    background-color: vars.$secondaryYellow;
+                    padding: 1rem;
+                    text-align: center;
+                    font-weight: 400;
+                    border-radius: 30px;
+                    border: 3px solid vars.$secondaryYellow;
+                    
+                    transition:  background-color ease 0.5s;
+                   
+
+
+                    // .connexionButton {
+                        
+                    //     top: 50%;
+                    //     left: 50%;
+                    // }
+
+                    // .inscriptionButton {
+                        
+                    //     top: 50%;
+                    //     left: 50%;
+                    // }
+
+                }
+                a:hover{
+                  background-color: vars.$primary; 
+                  color :  vars.$secondaryYellow;
+                  
+                  
+                }
+
+
+}
+            }
+        }
+    }
+
+
+
+
+
+
+@media screen and (max-width: 1440px) {
+    .headerContainer {
+        .container {
+            .imageContainer{
+                width: 35rem;
+            }
+            .presentationText {
+                font-size: 1.5rem;
+
+            }
+        }
+    }
+}
+ @media screen and (max-width: 1191px) {
+        .headerContainer {
+            .container {
+            .presentationText{
+            .buttonContainer{
+                font-size: 1rem;
+            }
+            }
+        }
+    }
+}
+      
+       
+
+@media screen and (max-width: 1024px) {
+    .headerContainer {
+        .container {
+            .presentationText {
+                width: 75%;
+
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .headerContainer {
+        padding: 5rem;
+
+        .container {
+                .imageContainer{
+                width: 30rem;
+            }
+            .presentationText {
+                width: 95%;
+                font-size: 1rem;
+                
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .headerContainer {
+        padding: 0;
+
+        .container {
+            .imageContainer {
+                width: 100%;
+                margin: 0;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .presentationText {
+                position: relative;
+                padding-top: 2rem;
+                width: 100%;
+                top: -40px;
+
+                // .buttonContainer {
+                //     position: absolute;
+                //     top: 140px;
+                //     width: 22em;
+                //     display: flex;
+                //     justify-content: space-around;
+
+                //     .connexionButton {
+                //         bottom: 50px;
+                //         left: 40%;
+                //     }
+
+                //     .inscriptionButton {
+                //         top: 50%;
+                //         left: 40%;
+                //     }
+                // }
+            }
+        }
+    }
+}
+// @media screen and (max-width: 430px) {
+//     .headerContainer {
+//         .container {
+//             .presentationText {
+//                 .buttonContainer {
+//                     top: 150px;
+//                 }
+//             }
+//         }
+//     }
+// }
+// @media screen and (max-width: 406px) {
+//     .headerContainer {
+//         .container {
+//             .presentationText {
+//                 .buttonContainer {
+//                     top: 170px;
+//                 }
+//             }
+//         }
+//     }
+// }
+// @media screen and (max-width: 348px) {
+//     .headerContainer {
+//         .container {
+//             .presentationText {
+//                 .buttonContainer {
+//                     top: 185px;
+//                 }
+//             }
+//         }
+//     }
+// }
+// @media screen and (max-width: 340px) {
+//     .headerContainer {
+//         .container {
+//             .presentationText {
+//                 .buttonContainer {
+//                 width: 20em;
+
+//                     top: 200px;
+//                 }
+//             }
+//         }
+//     }
+// }

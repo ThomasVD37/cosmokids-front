@@ -1,0 +1,44 @@
+@use '../../styles/vars';
+
+.FormRoot {
+    width: 260px;
+
+    input {
+        all: unset;
+        box-sizing: border-box;
+    }
+
+    .FormField {
+        display: grid;
+        margin-top: 10px;
+        .FormError {
+            font-weight: 700;
+            color: rgb(155, 24, 24);
+            margin-top: 10px;
+            // background-color: white;
+        }
+
+        .FormLabel {
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 35px;
+            color: vars.$secondaryYellow;
+        }
+
+        .FormMessage {
+            font-weight: 700;
+            font-size: 13px;
+            color: rgb(0, 0, 0);
+            opacity: 0.8;
+        }
+    
+    }
+
+    .FormMessage {
+        font-weight: 700;
+        font-size: 13px;
+        color: rgb(0, 0, 0);
+        opacity: 0.8;
+    }
+
+}

@@ -1,0 +1,111 @@
+@use '../../styles/vars';
+
+.activity_container {
+
+    height: calc(100vh - vars.$header-height);
+    margin: auto;
+    background-color: vars.$primary;
+    position: relative;
+
+    .login_reminder {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        z-index: 1;
+
+        &__container {
+            width: 60%;
+            height: 2.5rem;
+            font-size: 1.6rem;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            color: white;
+            background-color: vars.$tertiaryOrange;
+            border-radius: 0 0 5px 5px;
+            position: relative;
+
+            p {
+                min-height: fit-content;
+            }
+
+            i {
+                font-size: 2.5rem;
+                cursor: pointer;
+                position: absolute;
+                right: 10px;
+            }
+
+            a {
+                font-weight: 700;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .hidden {
+        display: none;
+    }
+
+}
+
+.activity {
+    height: 100%;
+}
+
+
+@media screen and (max-width: 1024px) {
+
+    .activity_container {
+        height: 100%;
+    }
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    .activity_container {
+        .login_reminder {
+
+            &__container {
+                width: 100%;
+            }
+        }
+    }
+
+    .activity_container.fullscreen {
+        transform: rotate(90deg);
+
+        .activity {
+            width: 100vh;
+            height: 100vw;
+
+            .login_reminder {
+                width: 100vh;
+
+                i {
+                    position: unset;
+                    margin-left: 1rem;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+ 
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .activity_container {
+        .login_reminder {
+
+            &__container {
+                font-size: 12px;
+            }
+        }
+    }
+}

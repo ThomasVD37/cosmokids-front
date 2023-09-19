@@ -1,0 +1,205 @@
+@use "./../../styles/vars";
+
+.lessonBlock {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 50em;
+    height: 8em;
+    margin: 80px 0;
+    padding: 15px 0;
+    background-color: vars.$tertiaryBlue;
+    padding-right: 19em;
+    padding-left: 5%;
+    border-radius: 5px;
+    transition: transform ease 0.5s;
+    cursor: pointer;
+
+    p {
+        font-size: 2rem;
+        line-height: 25px;
+        word-wrap: break-word;
+        text-align: left;
+        border-radius: 5px;
+    }
+
+    h2 {
+        position: absolute;
+        top: -15px;
+        left: -20px;
+        font-size: 2rem;
+        background-color: vars.$secondaryYellow;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    .image {
+        border-radius: 5px;
+        position: absolute;
+        top: -13px;
+        right: 15px;
+        height: 120%;
+        z-index: 5;
+    }
+
+}
+
+    .lessonBlock:hover{
+    transform: scale(1.05);
+}
+
+.LessonBlockMin {
+    position: relative;
+    width: 25%;
+    margin: 2em;
+    border-radius: 5px;
+    cursor: pointer;
+
+    h2 {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        font-size: 2rem;
+        top: -15px;
+        left: -15px;
+        padding: 5px 10px;
+        display: inline-block;
+        background-color: vars.$secondaryYellow;
+        color: rgb(0, 0, 0);
+        border-radius: 5px;
+    }
+
+    .type {
+        @extend h2;
+        background-color: vars.$tertiaryOrange;
+        top: 16px;
+        font-style: italic;
+        border-radius: 5px;
+    }
+
+    .image {
+        min-height: 100%;
+        min-width: 100%;
+        border-radius: 25px;
+    }
+}
+
+@media screen and (max-width: 2124px) {
+    .lessonBlock {
+        width: 40em;
+        height: 8em;
+
+        p {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+@media screen and (max-width: 1724px) {
+    .lessonBlock {
+        width: 35em;
+        height: 8em;
+        padding-right: 19em;
+        padding-left: 2em;
+
+        p {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+@media screen and (max-width: 1248px) {
+    .lessonBlock {
+        width: 28em;
+        height: 6em;
+        padding-right: 15em;
+        padding-left: 2em;
+
+        p {
+            font-size: 1.5rem;
+        }
+
+        .image {
+            top: -10px;
+        }
+    }
+}
+@media screen and (max-width: 1024px){
+    .lessonBlock {
+        width: 28em;
+        height: 6em;
+        margin: 30px 0;
+        padding-right: 15em;
+        padding-left: 2em;
+
+        h2 {
+        font-size: 1.5rem;
+
+        }
+
+        p {
+            font-size: 1.5rem;
+        }
+    }  
+}
+@media screen and (max-width: 768px) {
+    .lessonBlock {
+        width: 28em;
+        height: 6em;
+        margin: 30px 0;
+        padding-right: 15em;
+        padding-left: 2em;
+
+        p {
+            font-size: 1.5rem;
+        }
+    }
+
+    .LessonBlockMin {
+        width: 75%;
+
+        h2 {
+            font-size: 2rem;
+            top: 0;
+            left: 5px;
+
+        }
+
+        .type {
+            // @extend h2;
+            top: 31px
+        }
+
+        .image {
+            width: 40%;
+            height: 35%;
+            padding: 20px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 524px) {
+    .LessonBlockMin {
+        width: 75%;
+
+        h2 {
+            font-size: 1.5rem;
+            top: 0;
+            left: 5px;
+        }
+
+        .type {
+            // @extend h2;
+            top: 25px
+        }
+
+        .image {
+            width: 90%;
+            height: 25%;
+            padding: 20px;
+        }
+    }
+}

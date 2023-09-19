@@ -1,0 +1,143 @@
+@use '../../../styles/vars';
+
+.buttonPushable {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin: 2% 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100%;
+    max-height: 100%;
+
+    .buttonShadow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        background: hsl(0deg 0% 0% / 0.25);
+        will-change: transform;
+        transform: translateY(2px);
+        transition:
+        transform 600ms cubic-bezier(.3, .7, .4, 1);
+    }
+
+    .buttonEdge {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        background: linear-gradient(to left,
+                hsl(340deg, 100%, 16%) 0%,
+                hsl(340deg 100% 32%) 8%,
+                hsl(340deg 100% 32%) 92%,
+                hsl(340deg 100% 16%) 100%);
+    }
+
+    .buttonEdgeIsCurrent {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        background: linear-gradient(to left,
+                hsl(42, 100%, 27%) 0%,
+                hsl(48, 100%, 32%) 8%,
+                hsl(48, 100%, 32%) 92%,
+                hsl(42, 100%, 16%) 100%,
+            );
+    }
+
+    .buttonFront {
+        display: block;
+        position: relative;
+        border-radius: 12px;
+        font-size: 1.5rem;
+        color: white;
+        background: hsl(345deg 100% 47%);
+        will-change: transform;
+        transform: translateY(-4px);
+        transition:
+        transform 600ms cubic-bezier(.3, .7, .4, 1);
+        
+    }
+
+    .buttonFrontIsCurrent {
+        display: block;
+        position: relative;
+        border-radius: 12px;
+        font-size: 1.5rem;
+        color: rgb(51, 48, 48);
+        background: vars.$secondaryYellow;
+        will-change: transform;
+        transform: translateY(-4px);
+        transition:
+            transform 600ms cubic-bezier(.3, .7, .4, 1);
+    }
+}
+
+
+@media (min-width: 768px) {
+    .buttonFront {
+        font-size: 1.25rem;
+        padding: 3% 2%;
+    }
+    .buttonFrontIsCurrent {
+        font-size: 1.25rem;
+        padding: 3% 2%;
+    }
+}
+
+.buttonPushable:hover {
+    filter: brightness(110%);
+    -webkit-filter: brightness(110%);
+}
+
+.buttonPushable:hover .buttonFront {
+    transform: translateY(-6px);
+    transition:
+        transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.buttonPushable:active .buttonFront {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+}
+
+.buttonPushable:hover .buttonShadow {
+    transform: translateY(4px);
+    transition:
+        transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.buttonPushable:active .buttonShadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+}
+
+.buttonPushable:focus:not(:focus-visible) {
+    outline: none;
+}
+@media screen and (max-width: 768px) {
+    .buttonPushable {
+        height: 2em;
+    }
+    .buttonFront {
+        height: 2em;
+        padding: 3% 2%;
+    }
+    .buttonFrontIsCurrent {
+        height: 2em;
+        padding: 3% 2%;
+    }
+}

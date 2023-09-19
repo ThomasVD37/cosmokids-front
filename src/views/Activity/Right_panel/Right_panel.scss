@@ -1,0 +1,212 @@
+@use '../../../styles/vars';
+
+.right_panel {
+    height: 100%;
+    width: 15%;
+    background-color: vars.$secondaryBlue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+
+    &__help {
+        height: 100%;
+    }
+
+    .title {
+        display: flex;
+        color: vars.$secondaryYellow;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        i {
+            margin-right: 1rem;
+        }
+    }
+
+    .associated_lessons {
+        
+
+        &__block {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+            margin-bottom: 4rem;
+
+            img {
+                padding: 2rem 0 1rem;
+                width: 90%;
+            }
+
+            h4 {
+                background-color: vars.$tertiaryBlue;
+                padding: 0.5rem;
+                color: black;
+                font-family: vars.$title-familly;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            p {
+                position: absolute;
+                font-size: 12px;
+                font-weight: 700;
+                bottom: 0;
+                margin: auto;
+                background-color: vars.$tertiaryOrange;
+                padding: 0.5rem;
+
+            }
+        }
+    }
+
+
+    .ScrollAreaRoot {
+        max-height: 90%;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 2px 5px vars.$primary;
+        background-color: white;
+        --scrollbar-size: 1rem;
+    }
+
+    .ScrollAreaViewport {
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        padding: 1rem;
+        background-color: vars.$primary;
+    }
+
+    .ScrollAreaScrollbar {
+        display: flex;
+        /* ensures no selection */
+        user-select: none;
+        /* disable browser handling of all panning and zooming gestures on touch devices */
+        touch-action: none;
+        padding: 2px;
+        background: vars.$tertiaryBlue;
+        transition: background 160ms ease-out;
+    }
+
+    .ScrollAreaScrollbar[data-orientation='vertical'] {
+        width: var(--scrollbar-size);
+    }
+
+    .ScrollAreaScrollbar[data-orientation='horizontal'] {
+        flex-direction: column;
+        height: var(--scrollbar-size);
+    }
+
+    .ScrollAreaThumb {
+        flex: 1;
+        background: vars.$primary;
+        border-radius: var(--scrollbar-size);
+        position: relative;
+    }
+
+    /* increase target size for touch devices https://www.w3.org/WAI/WCAG21/Understanding/target-size.html */
+    .ScrollAreaThumb::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+}
+
+@media screen and (max-width: 1200px) {
+
+    .right_panel {
+        width: 20%;
+    }
+
+}
+
+
+@media screen and (max-width: 1024px) {
+
+    .right_panel {
+        height: 100%;
+        min-width: 100%;
+        margin-top: 2rem;
+
+        .associated_lessons {
+            display: flex;
+            justify-content: center;
+
+            &__block {
+                width: calc((100vw / 2) - 10rem);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                img {
+                    width: 70%;
+                }
+            }
+        }
+
+    }
+
+    // .AccordionRoot[data-orientation='vertical'] {
+    //     display: none;
+    // }
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .right_panel {
+
+        margin-top: 4rem;
+
+        .associated_lessons {
+
+            &__block {
+                width: calc((100vw / 2) - 6rem);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                img {
+                    width: 70%;
+                }
+            }
+        }
+
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    .right_panel {
+
+        .associated_lessons {
+            flex-direction: column;
+
+            &__block {
+                width: 100%;
+
+                img {
+                    width: 70%;
+                }
+            }
+        }
+
+    }
+
+}

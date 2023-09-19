@@ -1,0 +1,274 @@
+@use '../../styles/vars';
+
+@mixin browsers($info) {
+    animation: $info;
+    -webkit-animation: $info;
+    -moz-animation: $info;
+    -ms-animation: $info;
+    -o-animation: $info;
+}
+@mixin animation($name) {
+    @keyframes #{$name} {
+        @content;
+    }
+
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+}
+
+.container {
+    padding: 2%;
+    margin: auto;
+    background-color: vars.$primary;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    min-height: calc(100vh - vars.$header-height);
+    overflow: hidden;
+
+    .starsWrapper {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        z-index: 0;
+        .stars {
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            display: inline-block;
+            position: absolute;
+        }
+    }
+
+    h3 {
+        background-color: vars.$secondaryBlue;
+        color: vars.$secondaryYellow;
+        border-radius: 10px;
+        padding: 1% 3%;
+        font-size: 3rem;
+        z-index: 1;
+    }
+
+    .containerLesson {
+        margin-top: 3%; 
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 1;
+        img {
+            aspect-ratio: 16 / 9;
+            width: 45%;
+            border-radius: 10px;
+            box-shadow: 1px 2px 25px 7px rgba(255,255,255,0.17);
+            -webkit-box-shadow: 1px 2px 25px 7px rgba(255,255,255,0.17);
+            -moz-box-shadow: 1px 2px 25px 7px rgba(255,255,255,0.17);
+        }
+
+        div {
+            width: 45%;
+            height: 100%;
+            border-radius: 10px;
+            padding: 1.5%;
+            background-color: vars.$secondaryBlue;
+            box-shadow: 1px 2px 25px 7px rgba(255,255,255,0.17);
+            -webkit-box-shadow: 1px 2px 25px 7px rgba(255,255,255,0.17);
+            -moz-box-shadow: 1px 2px 25px 7px rgba(255,255,255,0.17);
+            p {
+                // background-color: #e7e7e7;
+                border-radius: 10px;
+                padding: 3%;
+                height: 100%;
+                width: 100%;
+                font-size: 25px;
+                line-height: 3.5rem;
+                color: rgb(255, 255, 255);
+
+
+                &::-webkit-scrollbar {
+                    width: 8px;
+                }
+
+                &::-webkit-scrollbar-track {
+                    box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+                    border-radius: 8px;
+                    background-color: #e7e7e7;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    border-radius: 8px;
+                    background-color: vars.$primary;
+                }
+
+            }
+        }
+    }
+
+    .containerActivityBinded {
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 40px;
+        margin: 20px;
+        width: 100%;
+
+        .containerTitleExercice {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 5%;
+            width: 100%;
+
+            h4 {
+                margin-top: 4%;
+                background-color: vars.$secondaryBlue;
+                font-family: vars.$title-familly;
+                color: vars.$secondaryYellow;
+                padding: 1% 3%;
+                border-radius: 10px;
+                font-size: 3rem;
+                display: inline;
+            }
+        }
+
+        .containerExercice {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 1624px) {
+    .container {
+
+        .containerLesson {
+            flex-direction: column;
+            justify-content: center;
+
+            img {
+                width: 90%;
+                height: 40%;
+            }
+
+            div {
+                width: 90%;
+                padding: 3%;
+                height: auto;
+                margin-top: 8%;
+
+                p {
+                    width: 100%;
+                    height: auto;
+                    font-size: 19px;
+                    line-height: 3rem;
+                }
+            }
+        }
+
+        .containerActivityBinded {
+            .containerTitleExercice {
+                margin-top: 7%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        .containerLesson {
+            div {
+                p {
+                    font-size: 15px;
+                    line-height: 3rem;
+                }
+            }
+        }
+
+        .containerActivityBinded {
+            .containerTitleExercice {
+                margin-top: 7%;
+                h4{
+                    font-size: 2.5rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        h3{
+            font-size: 2.5rem;
+        }
+        .containerLesson {
+            div {
+                p {
+                    font-size: 13px;
+                    line-height: 2.5rem;
+                }
+            }
+        }
+        .containerActivityBinded {
+            .containerTitleExercice {
+                display: flex;
+                justify-content: center;
+                
+                h4 {
+                    font-size: 2rem;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+@for $i from 1 through 200 {
+    .s#{$i} {
+        $speed: random(15) + 10 + s;
+        $delay: - (random(25)) + s;
+        $size: random(1) + 0.5px;
+        height: $size;
+        left: random(100) + 0%;
+        top: random(100) + 0%;
+        width: $size;
+        @include browsers(shiningStar $speed $delay infinite);
+    }
+}
+
+/* animations */
+@include animation(shiningStar) {
+    0% {
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 0.5;
+    }
+
+    40% {
+        opacity: 0;
+    }
+
+    60% {
+        opacity: 0.5;
+    }
+
+    80% {
+        opacity: 0.75;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

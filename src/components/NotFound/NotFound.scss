@@ -1,0 +1,76 @@
+@use '../../styles/vars';
+
+.notFoundContainer {
+    height: calc(100vh - vars.$header-height);
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+
+    img {
+        width: 500px;
+    }
+
+    p {
+        color: vars.$tertiaryOrange;
+        font-family: vars.$title-familly;
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    button {
+        background-color: vars.$secondaryYellow;
+        padding: 1rem 2rem;
+        font-size: 20px;
+        border: none;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background-color: vars.$tertiaryOrange;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    .notFoundContainer {
+        img {
+            width: 450px;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+
+    .notFoundContainer {
+        p {
+            font-size: 24px;
+        }
+
+        button {
+            font-size: 16px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .notFoundContainer {
+        p {
+            padding: 0 2rem;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .notFoundContainer {
+        justify-content: center;
+
+        p {
+            font-size: 20px;
+        }
+    }
+}

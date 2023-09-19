@@ -1,0 +1,53 @@
+@use '../../styles/vars';
+
+.containerRegister {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: vars.$primary;
+    overflow: hidden;
+    width: 100%;
+    height: calc(100vh - vars.$header-height);
+    .ContainerForm {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 30em;
+        height: 40em;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border-radius: 10px;
+
+        h3 {
+            color: vars.$secondaryYellow;
+            margin-bottom: 1em;
+            font-size: 3rem;
+        }
+
+        .containerRedirect {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 40px;
+            color: vars.$secondaryYellow;
+            font-weight: 700;
+            span {
+                display: flex;
+                justify-content: center;
+            }
+
+            .linkRegister {
+                display: flex;
+                justify-content: center;
+                text-decoration: underline;
+                color: rgb(245, 245, 245);
+                margin-left: 5px;
+                margin-top: 5px;
+
+                &:hover {
+                    color: rgba(255, 255, 255, 0.852);
+                }
+            }
+        }
+    }
+}

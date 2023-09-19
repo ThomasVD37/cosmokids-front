@@ -1,0 +1,105 @@
+@use "./../../styles/vars";
+
+.contentList {
+    margin: 0 10%;
+    margin-top: 10em;
+    display: flex;
+    justify-content: center;
+    color: black;
+
+    .containerLessonBlock {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 70%;
+
+        .title{
+            display: none;
+            color: vars.$secondaryYellow;
+        }
+    }
+
+    .containerActivityBlock {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 70%;
+        
+        .title{
+            display: none;
+            color: vars.$secondaryYellow;
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 1724px) {
+    .contentList {
+        margin: 0 3%;
+    }
+}
+
+@media screen and (max-width: 1248px) {
+    .contentList {
+        margin: 0 3%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .contentList {
+        flex-direction: column;
+        align-items: center;
+        margin: 0 3%;
+
+        .containerLessonBlock {
+
+            display: flex;
+            align-items: center;
+
+            .title {
+                display: block;
+                font-size: 2.5rem;
+                margin: 2em 0;
+                margin-right: auto;
+            }
+        }
+
+        .containerActivityBlock {
+            display: flex;
+            align-items: center;
+
+            .title {
+                display: block;
+                font-size: 2.5rem;
+                margin: 2em 0;
+                margin-right: auto;
+            }
+
+
+        }
+    }
+}
+        .homepageErrorMessage{
+            border : 2px solid vars.$secondaryYellow;
+            border-radius: 5px;
+            background-color: vars.$tertiaryBlue;
+            padding: 1%;
+            color: vars.$primary;
+            height: min-content;
+        }
+
+@media screen and (max-width: 685px) {
+    .contentList {
+        .containerLessonBlock {
+            width: 95%;
+        }
+
+        .containerActivityBlock {
+            width: 95%;
+        }
+    }
+}
+

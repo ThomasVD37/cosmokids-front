@@ -1,0 +1,83 @@
+@use '../../styles/vars';
+
+.matchingContainer{
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    aspect-ratio: 16/9;
+  
+    background-color: vars.$secondaryBlue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .gameItemsContainer{
+
+      margin: 15%
+
+    }
+
+    .successMessage{
+      text-align: center;
+      font-weight: 400;
+      margin: 2%;
+      color: vars.$secondaryYellow;
+      font-family: 'Space kids', sans-serif;
+      font-size: 3rem;
+    }
+
+      .score {
+      font-family: 'Space kids', sans-serif;
+      color: vars.$primary;
+      text-align: center;
+      font-size: 3rem ; 
+      font-weight: bold;
+      margin-bottom: 2% 
+  }
+
+@media screen and (max-width: 768px) {
+       .successMessage, .score{
+      margin-top: 2%;
+      font-size: 2rem;
+
+              
+       }
+}
+
+}
+
+  .draggableItemsContainer {
+  display: flex;
+  justify-content: center; 
+  margin-bottom: 2%;
+}
+
+  .droppableZoneContainer {
+  display: flex;
+  justify-content: center; 
+  margin-bottom: 2%;
+}
+
+
+
+.droppable {
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  height: 100% ;
+
+}
+
+.messageContainer{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+
+
+
+
