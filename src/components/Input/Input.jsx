@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useState, forwardRef } from 'react';
-import Hide from '../../assets/icon/input/hide.png'
-import Show from '../../assets/icon/input/show.png'
+import Hide from '/images/icon/input/hide.png'
+import Show from '/images/icon/input/show.png'
 import styles from './input.module.scss'
 
 

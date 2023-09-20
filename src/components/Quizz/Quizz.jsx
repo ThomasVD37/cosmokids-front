@@ -9,7 +9,6 @@ import Header from './Header/Header';
 import styles from './quizz.module.scss'
 import { ButtonMain } from '../../components/Button/Button';
 import StartQuiz from './StartQuiz/StartQuiz';
-import { useCompleteActivity } from '../../hooks/useCompleteActivity';
 
 
 const Quizz = () => {

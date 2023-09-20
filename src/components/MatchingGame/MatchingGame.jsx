@@ -8,11 +8,10 @@ import Droppable from './Droppable/Droppable';
 import PlayAgain from './PlayAgain/PlayAgain';
 
 
-import images from './../../assets/icon/matchingGame';
+import images from './../../assets/matchingImages';
 import spaceItems from './../../assets/matchingDatas';
 import styles from './matchingGame.module.scss'
 import SuccessMessage from './SuccessMessage/SuccessMessage';
-import { useCompleteActivity } from '../../hooks/useCompleteActivity';
 
 //import { handleDragEnd } from './Test/functions/functions';
 

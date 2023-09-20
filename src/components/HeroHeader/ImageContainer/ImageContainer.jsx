@@ -1,5 +1,5 @@
-import imageSmall from "./../../../assets/Personnage_astronaute_360w.png";
-import imageBig from "./../../../assets/Personnage_astronaute_1024w.png";
+import imageSmall from "/images/Personnage_astronaute_360w.png";
+import imageBig from "/images/Personnage_astronaute_1024w.png";
 import styles from "../HeroHeader.module.scss";
 
 const ImageContainer = () => {

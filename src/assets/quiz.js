@@ -7,7 +7,7 @@ export const questions = [
             "Louis Armstrong",
         ],
         correctAnswer: "Neil Armstrong",
-        img: "/src/assets/quiz/moon.png"
+        img: "/images/quiz/moon.png"
     },
     {
         questions: "Combien y a-t-il de planètes dans notre système solaire ?",
@@ -17,7 +17,7 @@ export const questions = [
             "5",
         ],
         correctAnswer: "8",
-        img: "/src/assets/quiz/sky.png"
+        img: "/images/quiz/sky.png"
     },
     {
         questions: "Comment s'appelle notre galaxie ?",
@@ -27,7 +27,7 @@ export const questions = [
             "Alpha du centaure",
         ],
         correctAnswer: "Voie lactée",
-        img: "/src/assets/quiz/galaxy.png"
+        img: "/images/quiz/galaxy.png"
     },
     {
         questions: "Comment s'appelle la planète qui a des anneaux bien visibles ?",
@@ -37,7 +37,7 @@ export const questions = [
             "La Lune",
         ],
         correctAnswer: "Saturne",
-        img: "/src/assets/quiz/saturn.png"
+        img: "/images/quiz/saturn.png"
     },
     {
         questions: "Comment s'appelle l'étoile de notre système solaire ?",
@@ -47,7 +47,7 @@ export const questions = [
             "Neptune",
         ],
         correctAnswer: "Soleil",
-        img: "/src/assets/quiz/planets-sky.png"
+        img: "/images/quiz/planets-sky.png"
     }, 
     {
         questions: "Comment appelle-t-on le voyage dans l'espace effectué par un astronaute ?",
@@ -57,7 +57,7 @@ export const questions = [
             "Une escapade cosmique",
         ],
         correctAnswer: "Un vol interstellaire",
-        img: "/src/assets/quiz/astronaut.png"
+        img: "/images/quiz/astronaut.png"
     },   
     {
         questions: "Quelle planète est surnommée la planète rouge ?",
@@ -67,7 +67,7 @@ export const questions = [
             "Tesla",
         ],
         correctAnswer: "Mars",
-        img: "/src/assets/quiz/mars.png"
+        img: "/images/quiz/mars.png"
     },
     {
         questions: "Quelle est la planète la plus proche du Soleil ?",
@@ -77,7 +77,7 @@ export const questions = [
             "Jupiter",
         ],
         correctAnswer: "Mercure",
-        img: "/src/assets/quiz/mercure.png"
+        img: "/images/quiz/mercure.png"
     },
     {
         questions: "Qu'est-ce que l'ISS ?",
@@ -87,7 +87,7 @@ export const questions = [
             "Un télescope spatial",
         ],
         correctAnswer: "Une station spatiale",
-        img: "/src/assets/quiz/iss.png"
+        img: "/images/quiz/iss.png"
     },
     {
         questions: "Quel est le plus grand satellite naturel de la Terre ?",
@@ -97,7 +97,7 @@ export const questions = [
             "ISS",
         ],
         correctAnswer: "La Lune",
-        img: "/src/assets/quiz/planets-random.png"
+        img: "/images/quiz/planets-random.png"
     },
 ]
 /**

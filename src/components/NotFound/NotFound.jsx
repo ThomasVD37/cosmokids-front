@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import image404 from '../../assets/image404_2.png'
+import image404 from '/images/image404_2.png'
 import './NotFound.scss'
 
 const NotFound = () => {

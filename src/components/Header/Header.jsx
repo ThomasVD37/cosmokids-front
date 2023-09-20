@@ -3,7 +3,7 @@ import *  as  Accordion from '@radix-ui/react-accordion';
 import *  as  NavigationMenu from '@radix-ui/react-navigation-menu';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
 import { NavLink, useNavigate } from "react-router-dom";
-import mainIcon from "../../assets/placeholder_logo.png";
+import mainIcon from "/images/logo.png";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../store/reducers/userReducer";
 import Searchbar from "../SearchBar/SearchBar";

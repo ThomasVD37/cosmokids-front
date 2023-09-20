@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { Restart } from "../../../store/reducers/quizz";
 import RockAnimation from "./RocketAnimation/RocketAnimation";
 import BackgroundResult from './BackgroundResult/BackgroundResult'
-import emptyStars from '../../../assets/icon/quizz/emptyStars.png'
-import stars from '../../../assets/icon/quizz/stars.png'
+import emptyStars from '/images/icon/quizz/emptyStars.png'
+import stars from '/images/icon/quizz/stars.png'
 import styles from './result.module.scss'
 import { useCompleteActivity } from "../../../hooks/useCompleteActivity";
 import { ButtonMain } from "../../../components/Button/Button";

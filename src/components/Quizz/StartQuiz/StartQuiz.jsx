@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { ButtonMain } from '../../../components/Button/Button';
 import { Start } from '../../../store/reducers/quizz';
 import styles from './startQuiz.module.scss'
-import img from '../../../assets/astronauteXplanet.png'
+import img from '/images/astronauteXplanet.png'
 const StartQuiz = () => {
     const dispatch = useDispatch();
 

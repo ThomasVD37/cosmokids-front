@@ -16,7 +16,7 @@ export const SortableItem = ({ id }) => {
         transition,
     };
 
-    const currentImage = './../src/assets/planets/' + id + '.jpg';
+    const currentImage = '/images/planets/' + id + '.jpg';
 
     return (
         <div className='sortableItem' ref={setNodeRef} style={style} {...attributes} {...listeners}>
