@@ -7,7 +7,7 @@ const initialState = {
 
 export const sendCompleteLesson = createAsyncThunk('lesson/complete', async (id, { rejectWithValue, getState, dispatch }) => {
     try {
-        const response = await fetch(`https://cosmokids.eu/api/completeLesson/${id}`, {
+        const response = await fetch(`https://admin.cosmokids.eu/api/completeLesson/${id}`, {
             method: 'GET',
             headers: {
                 "Accept": "application/json",
@@ -30,7 +30,7 @@ export const sendCompleteLesson = createAsyncThunk('lesson/complete', async (id,
 
 export const sendCompleteActivity = createAsyncThunk('activity/complete', async (id, { rejectWithValue, getState, dispatch }) => {
     try {
-        const response = await fetch(`https://cosmokids.eu/api/completeActivity/${id}`, {
+        const response = await fetch(`https://admin.cosmokids.eu/api/completeActivity/${id}`, {
             method: 'GET',
             headers: {
                 "Accept": "application/json",

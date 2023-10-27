@@ -27,21 +27,21 @@ export const nasaApiFetch = createAsyncThunk("nasa/fetch", async () => {
 
 export const fetchData = createAsyncThunk("data/fetch", async () => {
     const endPoints = [
-        fetch("https://cosmokids.eu/api/activities", {
+        fetch("https://admin.cosmokids.eu/api/activities", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
                 Accept: "application/json",
             },
         }),
-        fetch("https://cosmokids.eu/api/lessons", {
+        fetch("https://admin.cosmokids.eu/api/lessons", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
                 Accept: "application/json",
             },
         }),
-        fetch("https://cosmokids.eu/api/types", {
+        fetch("https://admin.cosmokids.eu/api/types", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

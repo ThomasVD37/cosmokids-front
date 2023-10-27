@@ -11,7 +11,7 @@ export const initialState = {
 };
 export const loginPost = createAsyncThunk('user/login', async ({ email, password }, { rejectWithValue }) => {
     try {
-        const response = await fetch('https://cosmokids.eu/api/login', {
+        const response = await fetch('https://admin.cosmokids.eu/api/login', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
@@ -33,7 +33,7 @@ export const loginPost = createAsyncThunk('user/login', async ({ email, password
 });
 export const registerPost = createAsyncThunk('user/register', async ({ email, password, pseudo }, { rejectWithValue }) => {
     try {
-        const response = await fetch('https://cosmokids.eu/api/register', {
+        const response = await fetch('https://admin.cosmokids.eu/api/register', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
@@ -57,7 +57,7 @@ export const registerPost = createAsyncThunk('user/register', async ({ email, pa
 });
 export const logout = createAsyncThunk('user/logout', async (_, { rejectWithValue, getState }) => {
     try {
-        const response = await fetch('https://cosmokids.eu/api/logout', {
+        const response = await fetch('https://admin.cosmokids.eu/api/logout', {
             method: 'GET',
             headers: {
                 "Accept": "application/json",
@@ -73,7 +73,7 @@ export const logout = createAsyncThunk('user/logout', async (_, { rejectWithValu
 });
 export const userInfoPatch = createAsyncThunk('userInfo/patch', async ({ usernamePatch, emailPatch }, { rejectWithValue, getState }) => {
     try {
-        const response = await fetch('https://cosmokids.eu/api/editUser', {
+        const response = await fetch('https://admin.cosmokids.eu/api/editUser', {
             method: 'PATCH',
             headers: {
                 "Content-Type": "application/json",
@@ -97,7 +97,7 @@ export const userInfoPatch = createAsyncThunk('userInfo/patch', async ({ usernam
 });
 export const passwordPatch = createAsyncThunk('password/patch', async ({ oldPassword, newPassword }, { rejectWithValue, getState }) => {
     try {
-        const response = await fetch('https://cosmokids.eu/api/editPassword', {
+        const response = await fetch('https://admin.cosmokids.eu/api/editPassword', {
             method: 'PATCH',
             headers: {
                 "Content-Type": "application/json",
@@ -121,7 +121,7 @@ export const passwordPatch = createAsyncThunk('password/patch', async ({ oldPass
 
 export const deleteAccount = createAsyncThunk('user/delete', async ({ passwordDeleteAccount }, { rejectWithValue, getState }) => {
     try {
-        const response = await fetch('https://cosmokids.eu/api/removeUser', {
+        const response = await fetch('https://admin.cosmokids.eu/api/removeUser', {
             method: 'DELETE',
             headers: {
                 "Content-Type": "application/json",
