@@ -6,19 +6,21 @@ const initialState = {
     typesList: [],
     searchQuery: "",
     loadComplete: false,
-    nasaQuery: {},
-    nasaLoadComplete: false,
+    landingImage: {url: "", title: "", explanation: ""},
 };
 
-export const nasaApiFetch = createAsyncThunk("nasa/fetch", async () => {
+
+
+export const FetchLandingImage = createAsyncThunk("nasa/fetch", async ({ randomDate }, {rejectWithValue}) => {
     try {
-        const response = await fetch('https://images-api.nasa.gov/search?q=planet', {
+        const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=iFnDtQXwdO9DgnVcGErEqV2WBvgOe8xnVU9fQgsq&date=${randomDate}`, {
             method: 'GET',
         });
         if (!response.ok) {
-            return rejectWithValue('Nasa fetch failed :(')
+            return rejectWithValue('Impossible de récupérer l\'image du jour')
         };
         const data = await response.json();
+        console.log(data);
         return data;
     } catch (error) {
         throw rejectWithValue('Oups! Une erreur est survenue')
@@ -27,21 +29,21 @@ export const nasaApiFetch = createAsyncThunk("nasa/fetch", async () => {
 
 export const fetchData = createAsyncThunk("data/fetch", async () => {
     const endPoints = [
-        fetch("https://admin.cosmokids.eu/api/activities", {
+        fetch("http://127.0.0.1:8000/api/activities", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
                 Accept: "application/json",
             },
         }),
-        fetch("https://admin.cosmokids.eu/api/lessons", {
+        fetch("http://127.0.0.1:8000/api/lessons", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
                 Accept: "application/json",
             },
         }),
-        fetch("https://admin.cosmokids.eu/api/types", {
+        fetch("http://127.0.0.1:8000/api/types", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -69,6 +71,9 @@ const dataSlice = createSlice({
         updateSearchQuery: (state, action) => {
             state.searchQuery = action.payload;
         },
+        setIsLoading: (state) => {
+            state.loadComplete = false;
+        }
     },
     extraReducers: (builder) => {
         builder
@@ -81,18 +86,15 @@ const dataSlice = createSlice({
             .addCase(fetchData.rejected, (state, action) => {
                 state.error = action.error.message;
             })
-            .addCase(nasaApiFetch.fulfilled, (state, action) => {
-                state.nasaQuery = action.payload.collection;
-                state.nasaLoadComplete = true;
+            .addCase(FetchLandingImage.fulfilled, (state, action) => {
+                state.landingImage = action.payload;
+                state.loadComplete = true;
             })
-            .addCase(nasaApiFetch.rejected, (state, action) => {
+            .addCase(FetchLandingImage.rejected, (state, action) => {
                 state.error = action.error.message;
             });
-        // .addCase(fetchActivity.pending, (state, action) => {
-
-        // })
     },
 });
 
-export const { updateSearchQuery } = dataSlice.actions;
+export const { updateSearchQuery, setIsLoading } = dataSlice.actions;
 export const dataReducer = dataSlice.reducer;
