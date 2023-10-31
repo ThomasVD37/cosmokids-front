@@ -20,7 +20,6 @@ export const FetchLandingImage = createAsyncThunk("nasa/fetch", async ({ randomD
             return rejectWithValue('Impossible de récupérer l\'image du jour')
         };
         const data = await response.json();
-        console.log(data);
         return data;
     } catch (error) {
         throw rejectWithValue('Oups! Une erreur est survenue')
@@ -29,21 +28,21 @@ export const FetchLandingImage = createAsyncThunk("nasa/fetch", async ({ randomD
 
 export const fetchData = createAsyncThunk("data/fetch", async () => {
     const endPoints = [
-        fetch("http://127.0.0.1:8000/api/activities", {
+        fetch("https://admin.cosmokids.eu/api/activities", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
                 Accept: "application/json",
             },
         }),
-        fetch("http://127.0.0.1:8000/api/lessons", {
+        fetch("https://admin.cosmokids.eu/api/lessons", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
                 Accept: "application/json",
             },
         }),
-        fetch("http://127.0.0.1:8000/api/types", {
+        fetch("https://admin.cosmokids.eu/api/types", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -92,6 +91,9 @@ const dataSlice = createSlice({
             })
             .addCase(FetchLandingImage.rejected, (state, action) => {
                 state.error = action.error.message;
+            })
+            .addCase(FetchLandingImage.pending, (state) => {
+                state.loadComplete = false;
             });
     },
 });
