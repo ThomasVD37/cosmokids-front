@@ -28,6 +28,9 @@ export const sendCompleteLesson = createAsyncThunk('lesson/complete', async (id,
     };
 });
 
+//admin.cosmokids.eu
+//127.0.0.1:8000
+
 export const sendCompleteActivity = createAsyncThunk('activity/complete', async (id, { rejectWithValue, getState, dispatch }) => {
     try {
         const response = await fetch(`https://admin.cosmokids.eu/api/completeActivity/${id}`, {
