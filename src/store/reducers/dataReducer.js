@@ -28,21 +28,21 @@ export const FetchLandingImage = createAsyncThunk("nasa/fetch", async ({ randomD
 
 export const fetchData = createAsyncThunk("data/fetch", async () => {
     const endPoints = [
-        fetch("https://admin.cosmokids.eu/api/activities", {
+        fetch("http://127.0.0.1:8000/api/activities", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
                 Accept: "application/json",
             },
         }),
-        fetch("https://admin.cosmokids.eu/api/lessons", {
+        fetch("http://127.0.0.1:8000/api/lessons", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
                 Accept: "application/json",
             },
         }),
-        fetch("https://admin.cosmokids.eu/api/types", {
+        fetch("http://127.0.0.1:8000/api/types", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
