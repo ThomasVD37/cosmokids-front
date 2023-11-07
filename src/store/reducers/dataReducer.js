@@ -9,7 +9,27 @@ const initialState = {
     landingImage: {url: "", title: "", explanation: ""},
 };
 
-
+export const TranslateText = createAsyncThunk("nasa/translate", async ({ text }, {rejectWithValue}) => {
+    try {
+        const key = import.meta.env.VITE_GOOGLE_TRANSLATE_API_KEY;
+        const response = await fetch(`https://translation.googleapis.com/language/translate/v2?key=${key}&q=${text}&source=en&target=fr`, {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            }
+        });
+        if (!response.ok) {
+            return rejectWithValue('Impossible de récupérer la traduction')
+        };
+        const {data} = await response.json();
+        const translatedText = data.translations[0].translatedText;
+        console.log(data.translations[0].translatedText);
+        return translatedText
+    } catch (error) {
+        throw rejectWithValue('Oups! Une erreur est survenue')
+    };
+});
 
 export const FetchLandingImage = createAsyncThunk("nasa/fetch", async ({ randomDate }, {rejectWithValue}) => {
     try {
@@ -94,6 +114,12 @@ const dataSlice = createSlice({
             })
             .addCase(FetchLandingImage.pending, (state) => {
                 state.loadComplete = false;
+            })
+            .addCase(TranslateText.rejected, (state, action) => {
+                state.error = action.error.message;
+            })
+            .addCase(TranslateText.fulfilled, (state, action) => {
+                state.landingImage.explanation = action.payload;
             });
     },
 });
