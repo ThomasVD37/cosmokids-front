@@ -1,13 +1,27 @@
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import './landing.scss'
 import { useRandomImage } from "../../hooks/useRandomImage";
+import { useEffect } from "react";
+import { TranslateText } from "../../store/reducers/dataReducer";
 
 const LandingPage = () => {
 
     useRandomImage();
 
+    const dispatch = useDispatch();
+
     const landingImage = useSelector(state => state.data.landingImage);
+    const isLoaded = useSelector(state => state.data.loadComplete);
+
+    useEffect(() => {
+        if (landingImage.explanation !== "") {
+            console.log("dispatch");
+            dispatch(TranslateText({ text: landingImage.explanation }));
+        }
+    }, []);
+
+    const cleanedText = landingImage.explanation.replaceAll("&#39;", "'");
 
     return (
         <div className="landing-container">
@@ -17,7 +31,7 @@ const LandingPage = () => {
             </div>
             <div className="landing-container__text">
                 <h2 className="title">Le saviez-tu vous ?</h2>
-                <p className="description">{landingImage.explanation}</p>
+                {isLoaded ? <p className="description">{cleanedText}</p> : <p className="description">Chargement...</p>}
                 <div className="button-box">
                     <Link to={"/home"} className="redirect">Vers les étoiles !</Link>
                 </div>
