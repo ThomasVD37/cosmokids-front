@@ -16,7 +16,6 @@ const LandingPage = () => {
 
     useEffect(() => {
         if (landingImage.explanation !== "") {
-            console.log("dispatch");
             dispatch(TranslateText({ text: landingImage.explanation }));
         }
     }, []);
@@ -30,7 +29,7 @@ const LandingPage = () => {
                 <img src={landingImage.url}></img>
             </div>
             <div className="landing-container__text">
-                <h2 className="title">Le saviez-tu vous ?</h2>
+                <h2 className="title">Le saviez vous ?</h2>
                 {isLoaded ? <p className="description">{cleanedText}</p> : <p className="description">Chargement...</p>}
                 <div className="button-box">
                     <Link to={"/home"} className="redirect">Vers les étoiles !</Link>

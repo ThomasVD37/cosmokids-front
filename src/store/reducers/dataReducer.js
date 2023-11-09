@@ -24,7 +24,6 @@ export const TranslateText = createAsyncThunk("nasa/translate", async ({ text },
         };
         const {data} = await response.json();
         const translatedText = data.translations[0].translatedText;
-        console.log(data.translations[0].translatedText);
         return translatedText
     } catch (error) {
         throw rejectWithValue('Oups! Une erreur est survenue')

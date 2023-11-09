@@ -19,7 +19,7 @@ const PresentationText = () => {
             <div className={styles.buttonContainer}>
                 {isLogged &&
                     <ButtonLink
-                        name={"Profil"}
+                        name={"Mon profil"}
                         path={"/user"}
                         className={styles.inscriptionButton}
                     />
