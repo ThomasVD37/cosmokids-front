@@ -8,7 +8,7 @@ export const useCompleteActivity = (isGameOver) => {
     const isLogged = useSelector(state => state.userData.isLogged);
     const { slug } = useParams();
     const dispatch = useDispatch();
-    const activityList = useSelector(state => state.data.activitiesList);
+    const activityList = useSelector(state => state.data.dataList.activities);
     const alreadyCompleted = useSelector(state => state.userData.user.completed_activities);
 
     useEffect(() => {

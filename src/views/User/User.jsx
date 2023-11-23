@@ -19,9 +19,9 @@ const User = () => {
     const isLogged = useSelector(state => state.userData.isLogged);
 
     const completedActivities = useSelector(state => state.userData.user.completed_activities);
-    const activities = useSelector(state => state.data.activitiesList);
+    const activities = useSelector(state => state.data.dataList.activities);
     const completedLessons = useSelector(state => state.userData.user.completed_lessons);
-    const lessons = useSelector(state => state.data.lessonsList);
+    const lessons = useSelector(state => state.data.dataList.lessons);
 
     // Fonction pour trier les cours et activités par ordre alphabétique en fonction du titre
     const sortedLessons = lessons.slice().sort((a, b) => a.title.localeCompare(b.title));
