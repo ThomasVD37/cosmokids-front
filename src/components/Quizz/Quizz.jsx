@@ -17,7 +17,7 @@ const Quizz = () => {
     
     const dispatch = useDispatch();
     const QuizzState = useSelector(state => state.quizz)
-    const activities = useSelector(state => state.data.activitiesList);
+    const activities = useSelector(state => state.data.dataList.activities);
     const {id} = activities.find((activity) => activity.slug === slug && activity)
     const { questions, showResult, currentQuestionsIndex, answers, correctAnswerCount, currentAnswer, isStarted, image } = QuizzState;
     useEffect(() => {

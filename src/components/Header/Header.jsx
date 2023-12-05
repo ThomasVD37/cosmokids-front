@@ -17,8 +17,8 @@ const Header = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const activities = useSelector((state) => state.data.activitiesList);
-    const lessons = useSelector((state) => state.data.lessonsList);
+    const activities = useSelector((state) => state.data.dataList.activities);
+    const lessons = useSelector((state) => state.data.dataList.lessons);
     const isLogged = useSelector((state) => state.userData.isLogged);
 
     const [menuIcon, setMenuIcon] = useState(true);

@@ -8,8 +8,8 @@ import styles from "./HomeSelectedContents.module.scss";
 
 const SelectedContents = () => {
     const navigate = useNavigate();
-    const activitiesList = useSelector((state) => state.data.activitiesList);
-    const lessonsList = useSelector((state) => state.data.lessonsList);
+    const activitiesList = useSelector((state) => state.data.dataList.activities);
+    const lessonsList = useSelector((state) => state.data.dataList.lessons);
 
     const filteredActivities = useArrayRandomiser(activitiesList, 3);
     const filteredLessons = useArrayRandomiser(lessonsList, 3);

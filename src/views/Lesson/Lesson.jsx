@@ -7,8 +7,8 @@ import { useCompleteLesson } from "../../hooks/useCompleteLesson";
 const Lesson = () => {
     const { slug } = useParams();
     const naviguate = useNavigate();
-    const lessons = useSelector(state => state.data.lessonsList);
-    const activities = useSelector(state => state.data.activitiesList);
+    const lessons = useSelector(state => state.data.dataList.lessons);
+    const activities = useSelector(state => state.data.dataList.activities);
 
     const { id, title, content, image, associated_activities } = lessons.find((lesson) => lesson.slug === slug && lesson)
     const numberOfStars = 600;

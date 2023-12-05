@@ -26,8 +26,8 @@ const Activity = () => {
 
     // TODO réparer le slug si 404
     const { slug } = useParams()
-    const activitiesList = useSelector(state => state.data.activitiesList)
-    const lessonsList = useSelector(state => state.data.lessonsList)
+    const activitiesList = useSelector(state => state.data.dataList.activities)
+    const lessonsList = useSelector(state => state.data.dataList.lessons)
     const currentActivity = activitiesList.find(activity => activity.slug === slug)
     
     const associated = currentActivity.associated_lessons.map(associated => {
