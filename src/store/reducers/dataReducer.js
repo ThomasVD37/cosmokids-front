@@ -49,7 +49,7 @@ export const FetchLandingImage = createAsyncThunk("nasa/fetch", async ({ randomD
 
 export const fetchData = createAsyncThunk("data/fetch", async () => {
     try {
-        const response = await fetch('http://127.0.0.1:8000/api/data', {
+        const response = await fetch('https://admin.cosmokids.eu/api/data', {
             method: 'GET',
             headers: {
                 "Content-Type": "application/json",
@@ -57,7 +57,6 @@ export const fetchData = createAsyncThunk("data/fetch", async () => {
             },
         });
         const data = await response.json();
-        console.log(data)
         return data;
 
     } catch (error) {
